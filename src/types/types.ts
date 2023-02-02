@@ -23,3 +23,25 @@ export type TNewUser = {
   password: string;
   confirmPassword: string;
 };
+
+export type TTickets = {
+  id: string;
+  title: string;
+  description: string;
+  linkedToProject: string;
+  deadLine: Date;
+  user: TUserWithoutPassword;
+  userId: string;
+  category: Category;
+  categoryId: string;
+  createdAt: Date;
+  updatedAt: Date;
+};
+
+export type Category = {
+  id: String;
+  name: String;
+  tickets: TTickets[];
+  createdAt: Date;
+  updatedAt: Date;
+};

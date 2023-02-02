@@ -1,10 +1,40 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+import { TTickets } from "@/types/types";
+import { useEffect, useState } from "react";
+import axiosInstance from "services/axiosInstance";
 
-const inter = Inter({ subsets: ["latin"] });
+type Iprops = {
+  tickets: TTickets;
+};
 
-export default function Home() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+export default function Home({ tickets }: Iprops) {
+  const [ticketList, setTicketList] = useState<TTickets[]>([]);
+  useEffect(() => {
+    axiosInstance.get("/tickets").then((data) => setTicketList(data.data));
+  }, []);
+  console.log(ticketList);
+  return (
+    <>
+      {ticketList.map((ticket) => (
+        <p className="text-white font-bold" key={ticket.id}>
+          {ticket.title}
+        </p>
+      ))}
+    </>
+  );
 }
+
+// export const getServerSideProps = async () => {
+//   try {
+//     const tickets = await axiosInstance.get("/tickets");
+//     if (tickets.data) {
+//       console.log(tickets);
+//       return {
+//         props: {
+//           tickets: tickets.data,
+//         },
+//       };
+//     }
+//   } catch (error) {
+//     return { notFound: true };
+//   }
+// };

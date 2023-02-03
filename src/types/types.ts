@@ -30,17 +30,27 @@ export type TTickets = {
   description: string;
   linkedToProject: string;
   deadLine: Date;
+  status: string;
   user: TUserWithoutPassword;
   userId: string;
-  category: Category;
+  category: TCategory;
   categoryId: string;
   createdAt: Date;
   updatedAt: Date;
 };
 
-export type Category = {
-  id: String;
-  name: String;
+export type TTicketBody = {
+  title: string;
+  description: string;
+  linkedToProject: string;
+  deadLine: string;
+  userName: string;
+  categoryId: TCategory;
+};
+
+export type TCategory = {
+  id: string;
+  name: string;
   tickets: TTickets[];
   createdAt: Date;
   updatedAt: Date;

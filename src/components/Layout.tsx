@@ -9,9 +9,9 @@ function Layout({ children }: TChildren) {
   return (
     <>
       <UserContextProvider>
-        <div className="w-screen fixed flex flex-col h-screen bg-gradient-to-r from-black via-slate-300 to-black">
+        <div className="w-screen fixed flex flex-col h-full bg-black">
           <Navbar />
-          <div className="w-full  h-screen flex bg-lightgrey">
+          <div className="w-full  h-full flex bg-lightgrey">
             <div className="w-full h-full overflow-auto ">{children}</div>
           </div>
         </div>

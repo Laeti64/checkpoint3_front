@@ -17,7 +17,7 @@ export default function Signin() {
   };
 
   return (
-    <div className="w-1/4 h-2/3 flex justify-center items-center mt-[7%] rounded-xl flex-col bg-gradient-to-r from-black via-slate-300 to-black text-black  m-auto">
+    <div className="w-1/4 h-2/3 flex justify-center items-center mt-[7%] rounded-xl flex-col bg-gradient-to-r from-black via-slate-400 to-black text-black  m-auto">
       <form className="flex space-y-5 flex-col">
         <div>
           <input

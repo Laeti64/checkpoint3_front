@@ -31,6 +31,7 @@ export type TTickets = {
   linkedToProject: string;
   deadLine: Date;
   status: string;
+  solution: string;
   user: TUserWithoutPassword;
   userId: string;
   category: TCategory;

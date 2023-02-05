@@ -32,6 +32,11 @@ export default function TicketLign({ ticket }: Props) {
                 - {ticket.category.name} - by {ticket.user.username}
               </p>
             </div>
+            <div className="text-gray-300 font-bold  w-auto my-2 h-10  px-2 m-auto">
+              <button>Answer</button>
+              <button>Close</button>
+              <button>🗑️</button>
+            </div>
           </div>
         </AccordionItemButton>
       </AccordionItemHeading>

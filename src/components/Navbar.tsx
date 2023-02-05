@@ -9,14 +9,18 @@ export default function Navbar() {
     isAuth ? signOut() : router.push("/auth/signin");
   };
   return (
-    <div className="flex justify-end ">
+    <div className="mb-14">
       {isAuth ? (
-        <button
-          className="text-white font-bold mr-5 mt-5"
-          onClick={() => handleClick(isAuth)}
-        >
-          LOG OUT
-        </button>
+        <div className="flex justify-between mx-5">
+          <p className="text-white font-bold mr-5 mt-5">Connected as Pupuce</p>
+
+          <button
+            className="text-white font-bold mr-5 mt-5"
+            onClick={() => handleClick(isAuth)}
+          >
+            LOG OUT
+          </button>
+        </div>
       ) : (
         <button
           className="text-white font-bold mr-5 mt-5"
